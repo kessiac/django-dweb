@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReIFeição</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href= "{% static "css/style.css" %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Cadastro</h2>
+            <form>
+                {% csrf_token %} 
+                <div class='signin'>
+                    <input type="text" name="" value="" placeholder="                Nome Completo">
+                    <br>
+                    <br>
+                    <input type="text" name="" value="" placeholder="                      Matrícula">
+                    <br>
+                    <br>
+                    <input type="password" name="" value="" placeholder="                        Senha">
+                    <br>
+                    <br>
+                    <div class="op">
+                        <input type="radio" name="cargo" value="Professor(a)">Professor(a)
+                        <input type="radio" name="cargo" value="Caest">Caest
+                    </div>
+                    <br>
+                    <input type="submit" name="" value="Cadastrar"> 
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

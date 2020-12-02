@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReIFeição</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href= "{% static "css/style.css" %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="box_cp">
+            <h2>Dados Gerais</h2>
+            <div class="table_dados">
+                <b>
+                    <label>Função:</label>
+                </b>
+                <label>Professor(a)</label>
+                <b>
+                    <label>Matrícula:</label>
+                </b>
+                <label>12443214434</label>
+                <br>
+            </div>
+            <hr>
+            <div class="table_process">
+                <table width='100%' border='1' bordercolor='#000000'>
+                    <th>Assunto</th>
+                    <th>Situação</th>
+                    {% for resultados in object_list %}
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.status}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="btn_exit" style="margin-top: -75px;">
+                <input type="submit" name="" value="Solicitação">
+                <input onclick="confirmExit()" type="submit" name="" value="Sair">
+            </div>
+            <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

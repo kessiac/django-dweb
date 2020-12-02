@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReIFeição</title>
+
+    <link rel="shortcut icon" href="{% static "img/if.ico">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href= "{% static "css/style.css" %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="box_cp">
+            <h2>Dados Gerais</h2>
+            <div class="table_dados">
+                <b>
+                    <label>Função:</label>
+                </b>
+                <label>Caest</label>
+                <b>
+                    <label>Matrícula:</label>
+                </b>
+                <label>12443214434</label>
+                <br>
+            </div>
+            <hr>
+            <div class="table_process">
+                <form>
+                    <table width='100%' border='1' bordercolor='#000000'>
+                        <th>Processo</th>
+                        <th>Situação</th>
+                        {%for resultados in object_list %}
+                        <tr>
+                            <td><a href="process">{{ resultados.data }}</a></td>
+                            <td>
+                                <input type="radio" name="situacao" value="Aprovar">Aprovar
+                                <input type="radio" name="situacao" value="Reprovar">Reprovar
+                                <input type="submit" name="" value="Confirmar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>asjkasa</td>
+                            <td>
+                                <input type="radio" name="situacao" value="Aprovar">Aprovar
+                                <input type="radio" name="situacao" value="Reprovar">Reprovar
+                                <input type="submit" name="" value="Confirmar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>asjkasa</td>
+                            <td>
+                                <input type="radio" name="situacao" value="Aprovar">Aprovar
+                                <input type="radio" name="situacao" value="Reprovar">Reprovar
+                                <input type="submit" name="" value="Confirmar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>asjkasa</td>
+                            <td>
+                                <input type="radio" name="situacao" value="Aprovar">Aprovar
+                                <input type="radio" name="situacao" value="Reprovar">Reprovar
+                                <input type="submit" name="" value="Confirmar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>asjkasa</td>
+                            <td>
+                                <input type="radio" name="situacao" value="Aprovar">Aprovar
+                                <input type="radio" name="situacao" value="Reprovar">Reprovar
+                                <input type="submit" name="" value="Confirmar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>asjkasa</td>
+                            <td>
+                                <input type="radio" name="situacao" value="Aprovar">Aprovar
+                                <input type="radio" name="situacao" value="Reprovar">Reprovar
+                                <input type="submit" name="" value="Confirmar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>asjkasa</td>
+                            <td>
+                                <input type="radio" name="situacao" value="Aprovar">Aprovar
+                                <input type="radio" name="situacao" value="Reprovar">Reprovar
+                                <input type="submit" name="" value="Confirmar">
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </table>
+                </form>
+            </div>
+            <div class="btn_exit">
+                <label><input style="margin-top: -65px;" type="submit" onclick="confirmExit()" name="" value="Sair"></label>
+            </div>
+        <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

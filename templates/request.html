@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReIFeição</title>
+
+    <link rel="shortcut icon" href="../assets/img/icon/if.ico">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href= "{% static "css/style.css" %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="box_cp">
+            <h2>Solicitação</h2>
+            <form id="dados" onsubmit="return aluno_matricula('minhaTabela')">
+                <div class="table_dados_req">
+                    <b><label>Curso:</b>
+                    <input type="text" name="" value="">
+    
+                    <b><label>Turma:</b>
+                    <input type="text" name="" value="">
+    
+                    <b><label >Data de Refeição:</b>
+                    <input type="date" min="1900-01-01" max="2021-31-12" name="" value="">
+    
+                    <b><label style="margin-left: -23px;">Tipo de Refeição:</b>
+                    <input type="radio" name="refeicao" value="Almoço">Almoço
+                    <input type="radio" name="refeicao" value="Janta">Janta
+                    
+                    <div style="display: flex; flex-direction: row;">
+                        <b><label style="padding-left: -12px;">Aluno:</b>
+                        <input id='aluno' type="text" name="" value="">
+    
+                        <b><label style="margin-left: -35px;">Matricula:</b>
+                        <input id='matricula' type="text" name="" value="">
+    
+                        <input onclick="aluno_matricula()" style="margin-left: 30px;" type="submit" name="" value="Adicionar">
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="table_process3">
+                    <table id="minhaTabela" width='100%' border='1' bordercolor='#000000'>
+                        <th>Alunos</th>
+                        <th>Matricula</th>
+                    </table>
+                </div>
+            </form>
+            <div class="btn_exit">
+                <input style="margin-top: -68px;" type="submit" name="" value="Solicitar">
+                <input style="margin-top: -68px;" onclick="history.go(-1); return false;" type="submit" name="" value="Voltar">
+
+            </div>
+        </div>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

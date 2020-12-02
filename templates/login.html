@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReIFeição</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href= "{% static "css/style.css" %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+        <img src="{% static 'img/logo.jpg' %}" alt="ReIFeição" width="50%"/>
+
+            <div class='login'>
+                <input type="text" name="Usuário" value="" placeholder="                        Usuário">
+                <br>
+                <br>
+                <input type="password" name="" value="" placeholder="                        Senha">
+                <br>
+                <br>
+                <input onclick="alertCadastre()" type="submit" name="" value="Entrar">
+                <br>
+                <a href="register">Cadastre-se</a>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
