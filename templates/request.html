@@ -15,20 +15,23 @@
     <div class="container">
         <div class="box_cp">
             <h2>Solicitação</h2>
-            <form id="dados" onsubmit="return aluno_matricula('minhaTabela')">
+            <form method="post" id='dados' action="{% url 'request-form' %}">
+                {% csrf_token %}
                 <div class="table_dados_req">
                     <b><label>Curso:</b>
-                    <input type="text" name="" value="">
+                        {{ form.curso}}
     
                     <b><label>Turma:</b>
-                    <input type="text" name="" value="">
+                        {{ form.turma}}
     
                     <b><label >Data de Refeição:</b>
-                    <input type="date" min="1900-01-01" max="2021-31-12" name="" value="">
+                        {{ form.data}}
     
                     <b><label style="margin-left: -23px;">Tipo de Refeição:</b>
-                    <input type="radio" name="refeicao" value="Almoço">Almoço
-                    <input type="radio" name="refeicao" value="Janta">Janta
+                    <input type="radio" name="tipo_de_refeicao" value="0">Almoço
+                    <input type="radio" name="tipo_de_refeicao" value="1">Janta
+                    <input type="hidden" name="professor" value="{{user.first_name}}">
+                    <input type="hidden" name="status" value="false">
                     
                     <div style="display: flex; flex-direction: row;">
                         <b><label style="padding-left: -12px;">Aluno:</b>
@@ -37,7 +40,7 @@
                         <b><label style="margin-left: -35px;">Matricula:</b>
                         <input id='matricula' type="text" name="" value="">
     
-                        <input onclick="aluno_matricula()" style="margin-left: 30px;" type="submit" name="" value="Adicionar">
+                        <input onclick="aluno_matricula('minhaTabela')" style="margin-left: 30px;" type="button" name="" value="Adicionar">
                     </div>
                 </div>
                 <hr>
@@ -48,12 +51,12 @@
                         <th>Matricula</th>
                     </table>
                 </div>
+                <div class="btn_exit">
+                    <input style="margin-top: -68px;" type="submit" name="" value="Solicitar">
+                    <input style="margin-top: -68px;" onclick="history.go(-1); return false;" type="submit" name="" value="Voltar">
+    
+                </div>
             </form>
-            <div class="btn_exit">
-                <input style="margin-top: -68px;" type="submit" name="" value="Solicitar">
-                <input style="margin-top: -68px;" onclick="history.go(-1); return false;" type="submit" name="" value="Voltar">
-
-            </div>
         </div>
     <script src="{% static 'js/script.js' %}"></script>
 </body>

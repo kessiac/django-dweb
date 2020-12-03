@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
     'reifeicao',
     'funcionario',
 ]
@@ -129,3 +130,5 @@ STATICFILES_DIRS = (
 os.path.join(BASE_DIR, "static"),
 os.path.join(BASE_DIR, "media")
 )
+LOGIN_REDIRECT_URL = '/request'
+LOGOUT_REDIRECT_URL = '/login'

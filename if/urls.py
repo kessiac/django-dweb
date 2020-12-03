@@ -19,17 +19,23 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from reifeicao import views
 from django.conf import settings
 from funcionario import views as viewsfunc
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='users-signin'),
+    path('logout/', auth_views.LogoutView.as_view(), name='users-signout'),
+
     path('form/', views.FormListView.as_view()),
     path('process/', views.FormDetailView.as_view()),
     path('professor/', views.FormProfDetailView.as_view()),
-    path('request/', viewsfunc.Request.as_view()),
-    path('register/', viewsfunc.Register.as_view()),
-    path('login/', views.index, name='login'),
-    path('', views.index, name='index'),
+    path('request/', views.ReIFCreateView.as_view(), name='request-form'),
+    path('requests/', views.ReIFCreateView.as_view(), name='request-list'),
+    
+    path('register/', views.signup),
 
+    path('', auth_views.LoginView.as_view(template_name='login.html'), name='users-signin'),
     #path('register/', views.register_page),
 ]
 urlpatterns += staticfiles_urlpatterns()

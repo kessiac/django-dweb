@@ -1,21 +1,21 @@
-var opt = document;
-function aluno_matricula(id){
-    var aluno = opt.getElementById('dados').aluno.value;
-    var matricula = opt.getElementById('dados').matricula.value;
 
-    var _table = opt.querySelector('table');
+function aluno_matricula(id){
+    var aluno = document.getElementById('dados').aluno.value;
+    var matricula = document.getElementById('dados').matricula.value;
+
+    var _table = document.querySelector('table');
     
-    var newRow = opt.createElement('tr');
+    var newRow = document.createElement('tr');
     newRow.insertCell(0).innerHTML = aluno;
     newRow.insertCell(1).innerHTML = matricula;
 
-    var input_hidden = opt.createElement('input');
+    var input_hidden = document.createElement('input');
     input_hidden.type = 'hidden';
-    input_hidden.name = aluno;
+    input_hidden.name = 'alunos';
     input_hidden.value = matricula;
 
-    opt.getElementById(id).appendChild(newRow);
-    opt.getElementById(id).appendChild(input_hidden);
+    document.getElementById(id).appendChild(newRow);
+    document.getElementById(id).appendChild(input_hidden);
 
     newRow.prepend(input_hidden);
 

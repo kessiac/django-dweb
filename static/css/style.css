@@ -38,7 +38,9 @@ body {
     margin: 0px;
     font: 500 1.6rem Poppins;
 }
-
+.form-control{
+    text-align: center;
+}
 img {
     margin-top: 25px;
     margin-left: 25%;

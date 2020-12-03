@@ -1,5 +1,10 @@
 from django.db import models
 
+class Aluno(models.Model):
+
+    nome = models.CharField(max_length=50)
+    matricula = models.CharField(max_length=50, primary_key=True)
+
 class Form(models.Model):
     
     TIPO = (
@@ -12,10 +17,4 @@ class Form(models.Model):
     data = models.CharField(max_length=50)
     tipo_de_refeicao = models.IntegerField(choices=TIPO)
     status = models.BooleanField()
-
-class Aluno(models.Model):
-
-    nome = models.CharField(max_length=50)
-    matricula = models.CharField(max_length=50)
-    professor = models.ManyToManyField(Form, related_name='alunos')
-
+    alunos = models.ManyToManyField(Aluno, related_name='forms')
