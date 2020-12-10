@@ -1,3 +1,4 @@
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,65 +23,27 @@
                 <b>
                     <label>Matrícula:</label>
                 </b>
-                <label>12443214434</label>
+                <label>{{user.username}}</label>
                 <br>
             </div>
             <hr>
             <div class="table_process">
                 <table width='100%' border='1' bordercolor='#000000'>
+                    {% csrf_token %}
                     <th>Assunto</th>
                     <th>Situação</th>
                     {% for resultados in object_list %}
                     <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
+                        <td>{{resultados.data}} - {{resultados.turma}} - {{resultados.curso}}</td>
                         <td>{{resultados.status}}</td>
                     </tr>
                     <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
-                    <tr>
-                        <td><a href="process">{{resultados.data}} </a></td>
-                        <td>{{resultados.status}}</td>
-                    </tr>
                     {% endfor %}
                 </table>
             </div>
             <div class="btn_exit" style="margin-top: -75px;">
-                <input type="submit" name="" value="Solicitação">
-                <input onclick="confirmExit()" type="submit" name="" value="Sair">
+                <a href="/request"> <input type="submit" name="" value="Solicitação"></a>
+                <a href= "{% url 'users-signout' %}"> <input onclick="confirmExit()" type="submit" name="" value="Sair"></a>
             </div>
             <script src="{% static 'js/script.js' %}"></script>
 </body>

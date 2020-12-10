@@ -1,3 +1,4 @@
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,28 +24,30 @@
                 <b>
                     <label>Matrícula:</label>
                 </b>
-                <label>12443214434</label>
+                <label>{{user.username}}</label>
                 <br>
             </div>
             <hr>
+            {%for resultados in object_list %}
             <div class="table_process">
                 <form>
                     <table width='100%' border='1' bordercolor='#000000'>
                         <th>Processo</th>
                         <th>Situação</th>
                         <tr>
-                            <td><a href="process">ghggj</td>
+                            <td><a href="{% url 'process-detail' resultados.pk %}">{{ resultados.data }}</a></td>
                             <td>
-                                <input type="radio" name="situacao" value="Aprovar">Aprovar
-                                <input type="radio" name="situacao" value="Reprovar">Reprovar
+                                <input type="radio" name="situacao" value="True">Aprovar
+                                <input type="radio" name="situacao" value="False">Reprovar
                                 <input type="submit" name="" value="Confirmar">
                             </td>
                         </tr>
                     </table>
                 </form>
             </div>
+            {% endfor %}
             <div class="btn_exit">
-                <label><input style="margin-top: -65px;" type="submit" onclick="confirmExit()" name="" value="Sair"></label>
+                <a href= "{% url 'users-signout' %}"><input style="margin-top: -65px;" type="submit" onclick="confirmExit()" name="" value="Sair"></a>
             </div>
         <script src="{% static 'js/script.js' %}"></script>
 </body>

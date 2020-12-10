@@ -24,18 +24,17 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='users-signin'),
+    path('', auth_views.LoginView.as_view(template_name='login.html'), name='users-signin'),
     path('logout/', auth_views.LogoutView.as_view(), name='users-signout'),
 
-    path('form/', views.FormListView.as_view()),
-    path('process/', views.FormDetailView.as_view()),
-    path('professor/', views.FormProfDetailView.as_view()),
+    path('form/', views.FormListView.as_view(), name='requets-caest'),
+    path('form/<int:pk>/', views.ReqDetailView.as_view(), name='process-detail'),
+    path('professor/', views.FormProfDetailView.as_view(), name='request-teacher'),
     path('request/', views.ReIFCreateView.as_view(), name='request-form'),
-    path('requests/', views.ReIFCreateView.as_view(), name='request-list'),
     
-    path('register/', views.signup),
+    path('register/', views.UserCreateView.as_view(), name='users-signup'),
 
-    path('', auth_views.LoginView.as_view(template_name='login.html'), name='users-signin'),
+    
     #path('register/', views.register_page),
 ]
 urlpatterns += staticfiles_urlpatterns()

@@ -130,5 +130,5 @@ STATICFILES_DIRS = (
 os.path.join(BASE_DIR, "static"),
 os.path.join(BASE_DIR, "media")
 )
-LOGIN_REDIRECT_URL = '/request'
-LOGOUT_REDIRECT_URL = '/login'
+LOGIN_REDIRECT_URL = '/professor'
+LOGOUT_REDIRECT_URL = '/'

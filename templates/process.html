@@ -16,21 +16,22 @@
         <div class="box_cp">
             <h2>Dados de Solicitação</h2>
             <form id="form">
+                {% csrf_token %}
                 <div class="table_dados_req" id='table_dados'>
                     <b><label>Professor(a):</b>
-                    <label  style="margin-left: -5px;">Kessia de Carvalho Silva</label>
+                    <label  style="margin-left: -5px;">{{user.first_name}}</label>
 
                     <b><label style="margin-left: -12px;">Curso:</label></b>
-                    <label style="margin-left: -5px;">ADS</label>
+                    <label style="margin-left: -5px;">{{object.curso}}</label>
 
                     <b><label>Turma:</label></b>
-                    <label style="margin-left: -5px;">P4</label>
+                    <label style="margin-left: -5px;">{{object.turma}}</label>
 
                     <b><label>Data de Refeição:</label></b>
-                    <label style="margin-left: -5px;">14/12/2020</label>
+                    <label style="margin-left: -5px;">{{object.data}}</label>
 
                     <b><label>Tipo de Refeição:</label></b>
-                    <label style="margin-left: -5px;">Almoço</label>
+                    <label style="margin-left: -5px;">{{object.tipo_de_refeicao}}</label>
                 </div>
                 <hr>
             </form>
@@ -39,102 +40,12 @@
                     <table width='100%' border='1' bordercolor='#000000'>
                         <th>Alunos</th>
                         <th>Matricula</th>
+                        {% for turma in object.alunos.all %}
                         <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
+                            <td>{{turma.nome}}</td>
+                            <td>{{turma.matricula}}</td>
                         </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
-                        <tr>
-                            <td>Kessia</td>
-                            <td>20171230000</td>
-                        </tr>
+                        {% endfor %}
                     </table>
                 </div>
             </form>

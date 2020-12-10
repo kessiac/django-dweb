@@ -1,56 +1,18 @@
 from django import forms
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User, Group
+from django.contrib.auth.forms import UserCreationForm
 
-class LoginForm(forms.Form):
-    username     = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                    "placeholder": "Matricula"
-                }
-            )
-        )
-    password     = forms.CharField(
-        widget=forms.PasswordInput(
-            attrs={ 
-                    "placeholder": "Senha"
-                }
-            )
-        )
+class UserForm(UserCreationForm):
 
-class RegisterForm(forms.Form):
-    CHOICES = (
-        (0, 'Professor(a)'),
-        (1, 'Caest'),
-    )
-    username     = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                    "class": "inpt", 
-                    "placeholder": "               Nome Completo"
-                }
-            )
-        )
-    matricula = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                    "class": "inpt",  
-                    "placeholder": "                      Matricula"
-                }
-        )
-    )
-    password = forms.CharField(
-        widget=forms.PasswordInput(
-            attrs={ 
-                    "class": "inpt", 
-                    "placeholder": "                         Senha"
-                }
-            )
-        )
-    radio_choices = forms.ChoiceField(
-        widget=forms.RadioSelect(
-            attrs={
-                "class": "op",
-            }
-        ),
-        choices=CHOICES,
-    )
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'groups')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.set_password(self.cleaned_data["password1"])
+        if commit:
+            user.save()
+            user.groups.add(self.cleaned_data['groups'][0])
+            user.save()
+        return user
