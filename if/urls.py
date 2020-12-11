@@ -16,16 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from reifeicao import views
 from django.conf import settings
 from funcionario import views as viewsfunc
 from django.contrib.auth import views as auth_views
+from reifeicao import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', auth_views.LoginView.as_view(template_name='login.html'), name='users-signin'),
+    path('', views.UserLoginView.as_view(template_name='login.html'), name='users-signin'),
     path('logout/', auth_views.LogoutView.as_view(), name='users-signout'),
+    path('signup/', views.UserCreateView.as_view(), name='users-signup'),
 
     path('form/', views.FormListView.as_view(), name='requets-caest'),
     path('form/<int:pk>/', views.ReqDetailView.as_view(), name='process-detail'),

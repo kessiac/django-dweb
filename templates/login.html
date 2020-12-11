@@ -15,10 +15,10 @@
     <div class="container">
         <div class="box">
         <img src="{% static 'img/logo.jpg' %}" alt="ReIFeição" width="50%"/>
-        <form method="post" action="{% url 'users-signin' %}" class="login">
+        <form method="post" action="{% url 'users-signin' %}" class="login" style="">
             {% csrf_token %}
                     {{ form.username|add_class:'form-control'|append_attr:'placeholder:Matricula'}}
-            <div class="form-row" style="margin-top: 4.7%;">
+            <div class="form-row" style="margin-top: 2.2%;">
                 <div class="col-md-12 form-group">
                     {{ form.password|add_class:'form-control'|append_attr:'placeholder:Senha'}}
                     <div class="validate"></div>

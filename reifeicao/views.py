@@ -1,10 +1,22 @@
+from django.conf import settings
 from django.urls import reverse_lazy
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, resolve_url
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView
+
 from . import models, forms
+
+class UserLoginView(LoginView):
+
+    def get_success_url(self):
+        url = self.get_redirect_url()
+        if self.request.user.groups.first().name == 'Caest':
+            return reverse_lazy('requets-caest')
+        else:
+            return reverse_lazy('request-teacher')
 
 class UserCreateView(CreateView):
 

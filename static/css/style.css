@@ -96,6 +96,54 @@ td a:hover{
 .table_dados_req input[type=text]:hover, .table_dados_req input[type=date]:hover, .table_process_req input[type=text]:hover{
     border-color: #01cc65;
 }
+select{
+    background: #F2F2F2;
+    font: 500 1.6rem Poppins;
+    width: 250px;
+    height: 30px;
+    margin-left: 24%;
+    border: 1px solid #000000;
+    color: #000000;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.25;
+}
+select:hover{
+    border-color: #01cc65;
+}
+.signup input[type=password], .signup input[type=text]{
+    background: #F2F2F2;
+    font: 500 1.6rem Poppins;
+    width: 250px;
+    height: 30px;
+    margin-left: 24%;
+    border: 1px solid #000000;
+    color: #000000;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.25;
+}
+.signup input[type=password]:hover, .signup input[type=text]:hover{
+    border-color: #01cc65;
+
+}
+.signup input[type=submit]{
+    background: #F2F2F2;
+    font: 500 1.6rem Poppins;
+    width: 230px;
+    height: 30px;
+    margin-left: 26.5%;
+    border: 1px solid #6F6C6C;
+    color: #000000;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.25;
+}
+.signup input[type=submit]:hover{
+    border: 1px solid #6F6C6C;
+    background-color: #01cc65;
+}
+
 .login input[type=password], .login input[type=text], .signin input[type=password], .signin input[type=text]{
     background: #F2F2F2;
     font: 500 1.6rem Poppins;
@@ -108,7 +156,6 @@ td a:hover{
     border-radius: 10px;
     transition: 0.25;
 }
-
 .login input[type=password]:hover, .login input[type=text]:hover, .signin input[type=password]:hover, .signin input[type=text]:hover{
     border-color: #01cc65;
 

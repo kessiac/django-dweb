@@ -41,9 +41,9 @@
                     {% endfor %}
                 </table>
             </div>
-            <div class="btn_exit" style="margin-top: -75px;">
-                <a href="/request"> <input type="submit" name="" value="Solicitação"></a>
-                <a href= "{% url 'users-signout' %}"> <input onclick="confirmExit()" type="submit" name="" value="Sair"></a>
+            <div class="btn_exit">
+                <a style="margin-top: -69px; margin-left: 60.5px; padding-right: 15%;" href="/request"> <input style="width: 218.06px;" type="submit" name="" value="Solicitação"></a>
+                <a style="margin-top: -69px;" href= "{% url 'users-signout' %}"> <input style="width: 218.06px;" onclick="confirmExit()" type="submit" name="" value="Sair"></a>
             </div>
             <script src="{% static 'js/script.js' %}"></script>
 </body>
