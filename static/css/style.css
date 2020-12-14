@@ -160,7 +160,22 @@ select:hover{
     border-color: #01cc65;
 
 }
-
+.box_cp input[type=button]{
+    background: #F2F2F2;
+    font: 500 1.6rem Poppins;
+    width: 160px;
+    height: 30px;
+    margin-left: 24%;
+    border: 1px solid #6F6C6C;
+    color: #000000;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.25;
+}
+.box_cp input[type=button]:hover{
+    border: 1px solid #6F6C6C;
+    background-color: #01cc65;
+}
 .login input[type=submit], .signin input[type=submit], .btn_exit input[type=submit]{
     background: #F2F2F2;
     font: 500 1.6rem Poppins;
