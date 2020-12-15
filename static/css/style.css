@@ -171,6 +171,7 @@ select:hover{
     border-radius: 10px;
     margin-bottom: 10px;
     transition: 0.25;
+    cursor: pointer;
 }
 .box_cp input[type=button]:hover{
     border: 1px solid #6F6C6C;
@@ -191,6 +192,7 @@ select:hover{
 .login input[type=submit]:hover, .signin input[type=submit]:hover, .btn_exit input[type=submit]:hover{
     border: 1px solid #6F6C6C;
     background-color: #01cc65;
+
 }
 .signin input[type=radio], td input[type=radio], input[type=radio]{
     display: inline-block;

@@ -46,8 +46,11 @@ class ReIFCreateView(CreateView):
     model = models.Form
     fields = ('professor', 'curso', 'turma', 'data', 'tipo_de_refeicao', 'alunos', 'status')
     template_name = 'request.html'
-    success_url = reverse_lazy('request-list')
+    success_url = reverse_lazy('request-teacher')
 
+    class Meta:
+        fields = ('professor', 'curso', 'turma', 'data', 'tipo_de_refeicao', 'alunos')
+        
 class ReqDetailView(DetailView):
     
     model = models.Form
